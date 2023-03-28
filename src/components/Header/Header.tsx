@@ -1,7 +1,8 @@
 const Header = () => {
   return (
     <section>
-      <div>header</div>
+      <div>devfinder</div>
+      <p>dark</p>
     </section>
   )
 }
