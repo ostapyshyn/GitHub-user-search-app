@@ -1,0 +1,29 @@
+.userCard {
+  display: flex;
+  padding: 48px;
+  background: #1e2a47;
+  border-radius: 15px;
+  max-width: 730px;
+  width: 100%;
+
+  .registration {
+    display: flex;
+    align-items: center;
+    .name {
+      font-family: 'Space Mono';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 26px;
+      line-height: 39px;
+      color: #ffffff;
+    }
+    .joined {
+      font-family: 'Space Mono';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 22px;
+      text-align: right;
+    }
+  }
+}
