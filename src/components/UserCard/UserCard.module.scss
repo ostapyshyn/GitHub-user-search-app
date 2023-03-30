@@ -5,25 +5,74 @@
   border-radius: 15px;
   max-width: 730px;
   width: 100%;
-
-  .registration {
-    display: flex;
-    align-items: center;
-    .name {
-      font-family: 'Space Mono';
-      font-style: normal;
-      font-weight: 700;
-      font-size: 26px;
-      line-height: 39px;
-      color: #ffffff;
+  .card {
+    width: 100%;
+    .tag {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: #0079ff;
+      margin-bottom: 20px;
     }
-    .joined {
-      font-family: 'Space Mono';
-      font-style: normal;
+    .bio {
       font-weight: 400;
       font-size: 15px;
-      line-height: 22px;
-      text-align: right;
+      line-height: 25px;
+      color: #ffffff;
+      mix-blend-mode: normal;
+      opacity: 0.75;
+      margin-bottom: 32px;
+    }
+    .info {
+      display: flex;
+      gap: 10px;
+
+      justify-content: space-between;
+      background: #141d2f;
+      border-radius: 10px;
+      padding-top: 15px;
+      padding-bottom: 17px;
+      padding-inline: 32px;
+      max-width: 480px;
+      .info_about {
+        flex: 1;
+        .info_num {
+          font-weight: 400;
+          font-size: 13px;
+          color: #ffffff;
+          line-height: 19px;
+        }
+        .count {
+          font-weight: 700;
+          font-size: 22px;
+          line-height: 33px;
+          text-transform: uppercase;
+          color: #ffffff;
+        }
+      }
+    }
+
+    .registration {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .name {
+        font-family: 'Space Mono';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 26px;
+        line-height: 39px;
+        color: #ffffff;
+      }
+      .joined {
+        font-family: 'Space Mono';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 22px;
+        text-align: right;
+        color: #ffffff;
+      }
     }
   }
 }
