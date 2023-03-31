@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 730px;
+  width: 100%;
+  margin-bottom: 36px;
+  .logo {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 39px;
+    color: #ffffff;
+  }
+}
