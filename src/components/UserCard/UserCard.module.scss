@@ -5,6 +5,10 @@
   border-radius: 15px;
   max-width: 730px;
   width: 100%;
+  gap: 37px;
+  .avatar {
+    flex-basis: 25%;
+  }
   .card {
     width: 100%;
     .tag {
@@ -23,9 +27,11 @@
       opacity: 0.75;
       margin-bottom: 32px;
     }
+
     .info {
       display: flex;
-      gap: 10px;
+      gap: 25px;
+      margin-bottom: 37px;
 
       justify-content: space-between;
       background: #141d2f;
@@ -35,6 +41,9 @@
       padding-inline: 32px;
       max-width: 480px;
       .info_about {
+        &:nth-child(2) {
+          margin-left: -10px;
+        }
         flex: 1;
         .info_num {
           font-weight: 400;
@@ -72,6 +81,28 @@
         line-height: 22px;
         text-align: right;
         color: #ffffff;
+      }
+    }
+  }
+}
+.user_info {
+  max-width: 480px;
+  display: flex;
+  gap: 67px;
+  .user_info_contact {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+    gap: 19px;
+    .user_contact {
+      display: flex;
+      align-items: center;
+      p {
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 22px;
+        color: #ffffff;
+        margin-left: 16px;
       }
     }
   }

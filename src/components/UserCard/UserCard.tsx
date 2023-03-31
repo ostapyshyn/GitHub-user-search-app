@@ -1,8 +1,16 @@
 import styles from './UserCard.module.scss'
+import location from '../../assets/icon-location.svg'
+import company from '../../assets/icon-company.svg'
+import twitter from '../../assets/icon-twitter.svg'
+import website from '../../assets/icon-website.svg'
+import avatar from '../../assets/Bitmap.svg'
 
 const UserCard = () => {
   return (
     <section className={styles.userCard}>
+      <div className={styles.avatar}>
+        <img src={avatar} alt="avatar" />
+      </div>
       <div className={styles.card}>
         <div className={styles.registration}>
           <p className={styles.name}>The Octocat</p>
@@ -26,11 +34,28 @@ const UserCard = () => {
             <p className={styles.count}>9</p>
           </div>
         </div>
-        <div>
-          <p>San Francisco</p>
-          <p>https://github.blog</p>
-          <p>@github</p>
-          <p>Not Available</p>
+        <div className={styles.user_info}>
+          <div className={styles.user_info_contact}>
+            <div className={styles.user_contact}>
+              <img src={location} alt="location" />
+              <p>San Francisco</p>
+            </div>
+            <div className={styles.user_contact}>
+              <img src={website} alt="website" />
+              <p>https://github.blog</p>
+            </div>
+          </div>
+          <div className={styles.user_info_contact}>
+            <div className={styles.user_contact}>
+              <img src={twitter} alt="twitter" />
+              <p>Not Available</p>
+            </div>
+
+            <div className={styles.user_contact}>
+              <img src={company} alt="company" />
+              <p>@github</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
