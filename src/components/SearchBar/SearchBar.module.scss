@@ -1,12 +1,43 @@
 .searchBar {
+  position: relative;
   margin-bottom: 24px;
   background: #1e2a47;
   border-radius: 15px;
   max-width: 730px;
   width: 100%;
-  padding: 10px;
+
+  display: flex;
+  align-items: center;
+  form {
+    width: 100%;
+    .search_input {
+      cursor: pointer;
+      padding-right: 126px;
+      padding-left: 80px;
+      padding-top: 22px;
+      padding-bottom: 22px;
+      border: none;
+      outline: none;
+      background-color: transparent;
+      width: 100%;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 25px;
+      color: #ffffff;
+      &::placeholder {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 25px;
+        color: #ffffff;
+      }
+    }
+  }
 
   .search_button {
+    position: absolute;
+    right: -42px;
+    top: 50%;
+    transform: translate(-50%, -50%);
     font-weight: 700;
     font-size: 16px;
     line-height: 24px;
@@ -16,5 +47,18 @@
     width: 106px;
     height: 50px;
     cursor: pointer;
+    &:hover {
+      background: #60abff;
+    }
+
+    &:active {
+      transform: translate(-49%, -49%) scale(0.98);
+    }
+  }
+  .search {
+    position: absolute;
+    left: 44px;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
 }
