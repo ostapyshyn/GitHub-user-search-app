@@ -11,4 +11,22 @@
     line-height: 39px;
     color: #ffffff;
   }
+  .switcher {
+    display: flex;
+    justify-content: center;
+    background: transparent;
+    cursor: pointer;
+    span {
+      font-weight: 700;
+      font-size: 13px;
+      line-height: 19px;
+      text-align: right;
+      letter-spacing: 2.5px;
+      color: #ffffff;
+      margin-right: 16px;
+    }
+    img {
+      display: inline;
+    }
+  }
 }
