@@ -42,7 +42,7 @@ const UserCard = () => {
             </div>
             <div className={styles.user_contact}>
               <img src={website} alt="website" />
-              <p>https://github.blog</p>
+              <p className={styles.link}>https://github.blog</p>
             </div>
           </div>
           <div className={styles.user_info_contact}>
