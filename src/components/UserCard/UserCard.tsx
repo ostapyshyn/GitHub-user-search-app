@@ -4,56 +4,87 @@ import company from '../../assets/icon-company.svg'
 import twitter from '../../assets/icon-twitter.svg'
 import website from '../../assets/icon-website.svg'
 import avatar from '../../assets/Bitmap.svg'
+import { User } from '../../api'
+interface Props {
+  data: User | undefined
+}
 
-const UserCard = () => {
+const transformDate = (date: string | undefined) => {
+  let joinedString = ''
+  const monthNames = [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec',
+  ]
+  let createdAt
+  if (date) {
+    createdAt = new Date(date)
+    joinedString = `${createdAt.getDate()} ${
+      monthNames[createdAt.getMonth()]
+    } ${createdAt.getFullYear()}`
+  }
+
+  return joinedString
+}
+
+const UserCard = ({ data }: Props) => {
   return (
     <section className={styles.userCard}>
       <div className={styles.avatar}>
-        <img src={avatar} alt="avatar" />
+        <img src={data?.avatar_url} alt="avatar" />
       </div>
       <div className={styles.card}>
         <div className={styles.registration}>
-          <p className={styles.name}>The Octocat</p>
-          <p className={styles.joined}>Joined 25 Jan 2011</p>
+          <p className={styles.name}>{data?.name}</p>
+          <p className={styles.joined}>Joined {transformDate(data?.created_at)}</p>
         </div>
-        <p className={styles.tag}>@octocat</p>
+        <p className={styles.tag}>@{data?.login}</p>
 
-        <p className={styles.bio}>This profile has no bio</p>
+        <p className={styles.bio}>{data?.bio || 'This profile has no bio'}</p>
 
         <div className={styles.info}>
           <div className={styles.info_about}>
             <p className={styles.info_num}>Repos</p>
-            <p className={styles.count}>8</p>
+            <p className={styles.count}>{data?.public_repos}</p>
           </div>
           <div className={styles.info_about}>
             <p className={styles.info_num}>Followers</p>
-            <p className={styles.count}>3938</p>
+            <p className={styles.count}>{data?.followers}</p>
           </div>
           <div className={styles.info_about}>
             <p className={styles.info_num}>Following</p>
-            <p className={styles.count}>9</p>
+            <p className={styles.count}>{data?.following}</p>
           </div>
         </div>
         <div className={styles.user_info}>
           <div className={styles.user_info_contact}>
             <div className={styles.user_contact}>
               <img src={location} alt="location" />
-              <p>San Francisco</p>
+              <p>{data?.location || 'Not Available'}</p>
             </div>
             <div className={styles.user_contact}>
               <img src={website} alt="website" />
-              <p className={styles.link}>https://github.blog</p>
+              <p className={styles.link}>{data?.blog || 'Not Available'}</p>
             </div>
           </div>
           <div className={styles.user_info_contact}>
             <div className={styles.user_contact}>
               <img src={twitter} alt="twitter" />
-              <p>Not Available</p>
+              <p>{data?.twitter_username || 'Not Available'}</p>
             </div>
 
             <div className={styles.user_contact}>
               <img src={company} alt="company" />
-              <p>@github</p>
+              <p>{data?.company || 'Not Available'}</p>
             </div>
           </div>
         </div>

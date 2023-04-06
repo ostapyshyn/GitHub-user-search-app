@@ -8,6 +8,9 @@
   gap: 37px;
   .avatar {
     flex-basis: 25%;
+    img {
+      border-radius: 50%;
+    }
   }
   .card {
     width: 100%;
@@ -81,6 +84,7 @@
         line-height: 22px;
         text-align: right;
         color: #ffffff;
+        white-space: nowrap;
       }
     }
   }
