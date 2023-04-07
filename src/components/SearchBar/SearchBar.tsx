@@ -19,9 +19,10 @@ const SearchBar = ({ setQuery, err }: Props) => {
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault()
-    setQuery(name)
+    if (name !== '') {
+      setQuery(name)
+    }
     setName('')
-    console.log('777')
   }
 
   return (
