@@ -16,6 +16,6 @@ export interface User {
 }
 
 export async function fetchUser(name: string) {
-  const { data } = await axios.get<User[]>(`https://api.github.com/users/${name}`)
+  const { data } = await axios.get<User>(`https://api.github.com/users/${name}`)
   return data
 }

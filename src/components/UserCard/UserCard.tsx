@@ -32,7 +32,6 @@ const transformDate = (date: string | undefined) => {
       monthNames[createdAt.getMonth()]
     } ${createdAt.getFullYear()}`
   }
-
   return joinedString
 }
 

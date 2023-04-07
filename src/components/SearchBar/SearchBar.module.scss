@@ -31,6 +31,16 @@
         color: #ffffff;
       }
     }
+    .no_results {
+      position: absolute;
+      right: 94px;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-weight: 700;
+      font-size: 15px;
+      line-height: 22px;
+      color: #f74646;
+    }
   }
 
   .search_button {
