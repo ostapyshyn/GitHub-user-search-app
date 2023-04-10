@@ -1,3 +1,4 @@
+@import '../../index.scss';
 .header {
   display: flex;
   justify-content: space-between;
@@ -5,6 +6,9 @@
   max-width: 730px;
   width: 100%;
   margin-bottom: 36px;
+  @include mq(1024px) {
+    max-width: 573px;
+  }
   .logo {
     font-weight: 700;
     font-size: 26px;

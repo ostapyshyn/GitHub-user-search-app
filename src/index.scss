@@ -7,6 +7,24 @@
   transition: all 0.2s ease-in-out;
 }
 
+:root {
+  --body_bg_color: #f6f8ff;
+  --para_color: #697c9a;
+  --container_bg_color: #fefefe;
+  --heading_color: #2b3442;
+  --btn_color: #0079ff;
+  --btn_hover_color: #4b6a9b;
+}
+
+[data-theme='dark'] {
+  --body_bg_color: #141d2f;
+  --para_color: #ffffff;
+  --container_bg_color: #1e2a47;
+  --heading_color: white;
+  --btn_color: #0079ff;
+  --btn_hover_color: #4b6a9b;
+}
+
 img,
 picture,
 video,
@@ -43,12 +61,13 @@ h6 {
     @content;
   }
 }
-
+.App {
+  background: var(--body_bg_color);
+}
 body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  background: #141d2f;
 }
 
 html:focus-within {

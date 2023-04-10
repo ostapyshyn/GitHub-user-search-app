@@ -43,10 +43,17 @@ const UserCard = ({ data }: Props) => {
       </div>
       <div className={styles.card}>
         <div className={styles.registration}>
-          <p className={styles.name}>{data?.name}</p>
-          <p className={styles.joined}>Joined {transformDate(data?.created_at)}</p>
+          <div className={styles.avatar_tab}>
+            <img src={data?.avatar_url} alt="avatar" />
+          </div>
+          <div>
+            <p className={styles.name}>{data?.name}</p>
+            <p className={styles.tag}>@{data?.login}</p>
+            <p className={styles.joined}>Joined {transformDate(data?.created_at)}</p>
+          </div>
+
+          <p className={styles.joined_tab}>Joined {transformDate(data?.created_at)}</p>
         </div>
-        <p className={styles.tag}>@{data?.login}</p>
 
         <p className={styles.bio}>{data?.bio || 'This profile has no bio'}</p>
 
