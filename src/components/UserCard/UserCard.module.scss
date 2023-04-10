@@ -32,6 +32,11 @@
       @include mq(1024px) {
         margin-bottom: 0px;
       }
+      @include mq(768px) {
+        font-size: 13px;
+        line-height: 19px;
+        margin-bottom: 6px;
+      }
     }
     .bio {
       font-weight: 400;
@@ -43,6 +48,10 @@
       margin-bottom: 32px;
       @include mq(1024px) {
         margin-top: 24px;
+      }
+      @include mq(768px) {
+        font-size: 13px;
+        line-height: 25px;
       }
     }
 
@@ -91,6 +100,9 @@
         justify-content: left;
         align-items: center;
       }
+      @include mq(768px) {
+        gap: 19.5px;
+      }
       .avatar_tab {
         display: none;
         img {
@@ -101,6 +113,10 @@
         @include mq(1024px) {
           display: block;
         }
+        @include mq(768px) {
+          width: 70px;
+          height: 70px;
+        }
       }
       .name {
         font-family: 'Space Mono';
@@ -109,6 +125,10 @@
         font-size: 26px;
         line-height: 39px;
         color: #ffffff;
+        @include mq(768px) {
+          font-size: 16px;
+          line-height: 24px;
+        }
       }
       .joined {
         font-family: 'Space Mono';
@@ -125,6 +145,10 @@
           display: block;
           text-align: left;
           margin-top: 0px;
+        }
+        @include mq(768px) {
+          font-size: 13px;
+          line-height: 19px;
         }
       }
       .joined_tab {

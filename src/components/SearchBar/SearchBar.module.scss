@@ -8,6 +8,10 @@
   width: 100%;
   @include mq(1024px) {
     max-width: 573px;
+    font-size: 13px;
+  }
+  @include mq(768px) {
+    margin-bottom: 16px;
   }
 
   display: flex;
@@ -33,6 +37,16 @@
         font-size: 18px;
         line-height: 25px;
         color: #ffffff;
+        @include mq(768px) {
+          font-size: 13px;
+        }
+      }
+      @include mq(768px) {
+        font-size: 13px;
+        padding-top: 18px;
+        padding-bottom: 17px;
+        padding-right: 7px;
+        padding-left: 45px;
       }
     }
     .no_results {
@@ -68,11 +82,22 @@
     &:active {
       transform: translate(-49%, -49%) scale(0.98);
     }
+    @include mq(768px) {
+      width: 84px;
+      height: 46px;
+      right: -35px;
+      font-size: 14px;
+    }
   }
   .search {
     position: absolute;
-    left: 44px;
+    left: 24px;
     top: 50%;
     transform: translate(-50%, -50%);
+    @include mq(768px) {
+      max-width: 573px;
+      width: 20px;
+      height: 20px;
+    }
   }
 }
