@@ -75,7 +75,7 @@ const UserCard = ({ data }: Props) => {
           <div className={styles.user_info_contact}>
             <div className={styles.user_contact}>
               <img src={location} alt="location" />
-              <p>{data?.location || 'Not Available'}</p>
+              <p className={styles.city}>{data?.location || 'Not Available'}</p>
             </div>
             <div className={styles.user_contact}>
               <img src={website} alt="website" />

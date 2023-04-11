@@ -91,10 +91,11 @@
   }
   .search {
     position: absolute;
-    left: 24px;
+    left: 46px;
     top: 50%;
     transform: translate(-50%, -50%);
     @include mq(768px) {
+      left: 24px;
       max-width: 573px;
       width: 20px;
       height: 20px;

@@ -11,6 +11,12 @@
     max-width: 573px;
     padding: 40px;
   }
+  @include mq(768px) {
+    max-width: 573px;
+    padding-inline: 24px;
+    padding-top: 32px;
+    padding-bottom: 48px;
+  }
   .avatar {
     flex-basis: 25%;
     img {
@@ -52,6 +58,8 @@
       @include mq(768px) {
         font-size: 13px;
         line-height: 25px;
+        margin-bottom: 24px;
+        margin-top: 33px;
       }
     }
 
@@ -70,6 +78,12 @@
       @include mq(1024px) {
         max-width: 493px;
       }
+      @include mq(768px) {
+        padding-block: 18px;
+        padding-inline: 15px;
+        margin-bottom: 24px;
+        gap: 0;
+      }
       .info_about {
         &:nth-child(2) {
           margin-left: -10px;
@@ -80,6 +94,12 @@
           font-size: 13px;
           color: #ffffff;
           line-height: 19px;
+          @include mq(768px) {
+            font-size: 11px;
+            line-height: 16px;
+            margin-bottom: 9px;
+            text-align: center;
+          }
         }
         .count {
           font-weight: 700;
@@ -87,6 +107,11 @@
           line-height: 33px;
           text-transform: uppercase;
           color: #ffffff;
+          @include mq(768px) {
+            font-size: 16px;
+            line-height: 24px;
+            text-align: center;
+          }
         }
       }
     }
@@ -171,11 +196,18 @@
   max-width: 480px;
   display: flex;
   gap: 67px;
+  @include mq(768px) {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
   .user_info_contact {
     display: flex;
     flex-direction: column;
     flex-basis: 50%;
     gap: 19px;
+    @include mq(768px) {
+      gap: 16px;
+    }
     .user_contact {
       display: flex;
       align-items: center;
@@ -185,6 +217,12 @@
         line-height: 22px;
         color: #ffffff;
         margin-left: 16px;
+        @include mq(768px) {
+          font-size: 13px;
+          line-height: 19px;
+          margin-left: 13px;
+          white-space: nowrap;
+        }
       }
       .link {
         &:hover {
@@ -192,6 +230,9 @@
           text-decoration: underline;
           text-underline-offset: 3px;
         }
+      }
+      .city {
+        margin-left: 18px;
       }
     }
   }
