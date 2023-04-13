@@ -24,6 +24,8 @@ function App() {
     }
     setErr(false)
     const data = await resp.json()
+    console.log(data)
+
     setUserData(data)
   }
 

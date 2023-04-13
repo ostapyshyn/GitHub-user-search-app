@@ -1,7 +1,7 @@
 import styles from './UserCard.module.scss'
 import location from '../../assets/icon-location.svg'
-import company from '../../assets/icon-company.svg'
-import twitter from '../../assets/icon-twitter.svg'
+import { ReactComponent as Twitter } from '../../assets/icon-twitter.svg'
+import { ReactComponent as Company } from '../../assets/icon-company.svg'
 import website from '../../assets/icon-website.svg'
 import avatar from '../../assets/Bitmap.svg'
 import { User } from '../../api'
@@ -36,6 +36,9 @@ const transformDate = (date: string | undefined) => {
 }
 
 const UserCard = ({ data }: Props) => {
+  const stylesObj = {
+    background: '--my-css-var',
+  }
   return (
     <section className={styles.userCard}>
       <div className={styles.avatar}>
@@ -84,12 +87,16 @@ const UserCard = ({ data }: Props) => {
           </div>
           <div className={styles.user_info_contact}>
             <div className={styles.user_contact}>
-              <img src={twitter} alt="twitter" />
-              <p>{data?.twitter_username || 'Not Available'}</p>
+              <Twitter fill={data?.twitter_username ? '#fff' : 'var(--transparentText)'} />
+              <p style={data?.twitter_username ? undefined : { color: 'var(--transparentText)' }}>
+                {data?.twitter_username || 'Not Available'}
+              </p>
             </div>
 
-            <div className={styles.user_contact}>
-              <img src={company} alt="company" />
+            <div
+              className={styles.user_contact}
+              style={data?.company ? { color: '--transparentText' } : undefined}>
+              <Company fill={data?.company ? '#fff' : 'var(--transparentText)'} />
               <p>{data?.company || 'Not Available'}</p>
             </div>
           </div>
