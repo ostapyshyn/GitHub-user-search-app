@@ -8,23 +8,31 @@
 }
 
 :root {
+  --title_color: #222731;
   --body_bg_color: #f6f8ff;
   --para_color: #697c9a;
   --container_bg_color: #fefefe;
   --heading_color: #2b3442;
   --btn_color: #0079ff;
   --btn_hover_color: #4b6a9b;
-  --transparentText: rgba(255, 255, 255, 0.5);
+  --input_color: #4b6a9b;
+  --textColor: #2b3442;
+  --bio_Text_color: #4b6a9b;
+  --transparentText: #a4b4cd;
 }
 
 [data-theme='dark'] {
+  --title_color: #ffffff;
   --body_bg_color: #141d2f;
   --para_color: #ffffff;
   --container_bg_color: #1e2a47;
-  --heading_color: white;
+  --heading_color: #fff;
   --btn_color: #0079ff;
+  --input_color: #fff;
   --btn_hover_color: #4b6a9b;
-  --transparentText: rgba(255, 255, 255, 0.4);
+  --textColor: #ffffff;
+  --bio_Text_color: rgba(255, 255, 255, 0.75);
+  --transparentText: #787f91;
 }
 
 img,

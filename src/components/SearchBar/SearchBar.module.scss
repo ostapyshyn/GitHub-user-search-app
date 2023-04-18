@@ -2,7 +2,7 @@
 .searchBar {
   position: relative;
   margin-bottom: 24px;
-  background: #1e2a47;
+  background: var(--container_bg_color);
   border-radius: 15px;
   max-width: 730px;
   width: 100%;
@@ -36,7 +36,7 @@
         font-weight: 400;
         font-size: 18px;
         line-height: 25px;
-        color: #ffffff;
+        color: var(--input_color);
         @include mq(768px) {
           font-size: 13px;
         }

@@ -2,11 +2,13 @@
 .userCard {
   display: flex;
   padding: 48px;
-  background: #1e2a47;
+  background: var(--container_bg_color);
   border-radius: 15px;
   max-width: 730px;
   width: 100%;
   gap: 37px;
+
+  border-radius: 15px;
   @include mq(1024px) {
     max-width: 573px;
     padding: 40px;
@@ -48,7 +50,7 @@
       font-weight: 400;
       font-size: 15px;
       line-height: 25px;
-      color: #ffffff;
+      color: var(--bio_Text_color);
       mix-blend-mode: normal;
       opacity: 0.75;
       margin-bottom: 32px;
@@ -69,7 +71,7 @@
       margin-bottom: 37px;
 
       justify-content: space-between;
-      background: #141d2f;
+      background: var(--body_bg_color);
       border-radius: 10px;
       padding-top: 15px;
       padding-bottom: 17px;
@@ -90,9 +92,9 @@
         }
         flex: 1;
         .info_num {
-          font-weight: 400;
           font-size: 13px;
-          color: #ffffff;
+          font-weight: 400;
+          color: var(--input_color);
           line-height: 19px;
           @include mq(768px) {
             font-size: 11px;
@@ -106,7 +108,7 @@
           font-size: 22px;
           line-height: 33px;
           text-transform: uppercase;
-          color: #ffffff;
+          color: var(--heading_color);
           @include mq(768px) {
             font-size: 16px;
             line-height: 24px;
@@ -149,7 +151,7 @@
         font-weight: 700;
         font-size: 26px;
         line-height: 39px;
-        color: #ffffff;
+        color: var(--textColor);
         @include mq(768px) {
           font-size: 16px;
           line-height: 24px;
@@ -181,7 +183,7 @@
         font-size: 15px;
         line-height: 22px;
         text-align: right;
-        color: #ffffff;
+        color: var(--para_color);
         white-space: nowrap;
         margin-top: 6px;
 
@@ -220,7 +222,7 @@
         font-weight: 400;
         font-size: 15px;
         line-height: 22px;
-        color: #ffffff;
+        color: var(--input_color);
         margin-left: 16px;
         @include mq(768px) {
           font-size: 13px;

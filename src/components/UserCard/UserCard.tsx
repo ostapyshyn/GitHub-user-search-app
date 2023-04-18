@@ -5,6 +5,8 @@ import { ReactComponent as Company } from '../../assets/icon-company.svg'
 import { ReactComponent as Website } from '../../assets/icon-website.svg'
 import avatar from '../../assets/Bitmap.svg'
 import { User } from '../../api'
+import { useContext } from 'react'
+import ThemeContext from '../../context/ThemeContext'
 interface Props {
   data: User | undefined
 }
@@ -36,11 +38,14 @@ const transformDate = (date: string | undefined) => {
 }
 
 const UserCard = ({ data }: Props) => {
-  const stylesObj = {
-    background: '--my-css-var',
-  }
+  const { lightMode, modeChanger } = useContext(ThemeContext)
+
   return (
-    <section className={styles.userCard}>
+    <section
+      className={styles.userCard}
+      style={{
+        ...(!lightMode && { boxShadow: '0px 16px 30px -10px rgba(70, 96, 187, 0.198567)' }),
+      }}>
       <div className={styles.avatar}>
         <img src={data?.avatar_url} alt="avatar" />
       </div>
@@ -77,17 +82,24 @@ const UserCard = ({ data }: Props) => {
         <div className={styles.user_info}>
           <div className={styles.user_info_contact}>
             <div className={styles.user_contact}>
-              <Location fill={data?.location ? '#fff' : 'var(--transparentText)'} />
-              <p style={data?.location ? { color: '#fff' } : { color: 'var(--transparentText)' }}>
+              <Location fill={data?.location ? 'var(--input_color)' : 'var(--transparentText)'} />
+              <p
+                style={
+                  data?.location
+                    ? { color: 'var(--input_color)' }
+                    : { color: 'var(--transparentText)' }
+                }>
                 {data?.location || 'Not Available'}
               </p>
             </div>
             <div className={styles.user_contact}>
-              <Website fill={data?.blog ? '#fff' : 'var(--transparentText)'} />
+              <Website fill={data?.blog ? 'var(--input_color)' : 'var(--transparentText)'} />
               <a
                 href={data?.blog}
                 className={styles.link}
-                style={data?.blog ? { color: '#fff' } : { color: 'var(--transparentText)' }}>
+                style={
+                  data?.blog ? { color: 'var(--input_color)' } : { color: 'var(--transparentText)' }
+                }>
                 {data?.blog || 'Not Available'}
               </a>
             </div>
@@ -95,10 +107,14 @@ const UserCard = ({ data }: Props) => {
 
           <div className={styles.user_info_contact}>
             <div className={styles.user_contact}>
-              <Twitter fill={data?.twitter_username ? '#fff' : 'var(--transparentText)'} />
+              <Twitter
+                fill={data?.twitter_username ? 'var(--input_color)' : 'var(--transparentText)'}
+              />
               <p
                 style={
-                  data?.twitter_username ? { color: '#fff' } : { color: 'var(--transparentText)' }
+                  data?.twitter_username
+                    ? { color: 'var(--input_color)' }
+                    : { color: 'var(--transparentText)' }
                 }>
                 {data?.twitter_username || 'Not Available'}
               </p>
@@ -107,8 +123,13 @@ const UserCard = ({ data }: Props) => {
             <div
               className={styles.user_contact}
               style={data?.company ? { color: '--transparentText' } : undefined}>
-              <Company fill={data?.company ? '#fff' : 'var(--transparentText)'} />
-              <p style={data?.company ? { color: '#fff' } : { color: 'var(--transparentText)' }}>
+              <Company fill={data?.company ? 'var(--input_color)' : 'var(--transparentText)'} />
+              <p
+                style={
+                  data?.company
+                    ? { color: 'var(--input_color)' }
+                    : { color: 'var(--transparentText)' }
+                }>
                 {data?.company || 'Not Available'}
               </p>
             </div>
