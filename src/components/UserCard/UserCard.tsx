@@ -1,8 +1,8 @@
 import styles from './UserCard.module.scss'
-import location from '../../assets/icon-location.svg'
+import { ReactComponent as Location } from '../../assets/icon-location.svg'
 import { ReactComponent as Twitter } from '../../assets/icon-twitter.svg'
 import { ReactComponent as Company } from '../../assets/icon-company.svg'
-import website from '../../assets/icon-website.svg'
+import { ReactComponent as Website } from '../../assets/icon-website.svg'
 import avatar from '../../assets/Bitmap.svg'
 import { User } from '../../api'
 interface Props {
@@ -77,18 +77,29 @@ const UserCard = ({ data }: Props) => {
         <div className={styles.user_info}>
           <div className={styles.user_info_contact}>
             <div className={styles.user_contact}>
-              <img src={location} alt="location" />
-              <p className={styles.city}>{data?.location || 'Not Available'}</p>
+              <Location fill={data?.location ? '#fff' : 'var(--transparentText)'} />
+              <p style={data?.location ? { color: '#fff' } : { color: 'var(--transparentText)' }}>
+                {data?.location || 'Not Available'}
+              </p>
             </div>
             <div className={styles.user_contact}>
-              <img src={website} alt="website" />
-              <p className={styles.link}>{data?.blog || 'Not Available'}</p>
+              <Website fill={data?.blog ? '#fff' : 'var(--transparentText)'} />
+              <a
+                href={data?.blog}
+                className={styles.link}
+                style={data?.blog ? { color: '#fff' } : { color: 'var(--transparentText)' }}>
+                {data?.blog || 'Not Available'}
+              </a>
             </div>
           </div>
+
           <div className={styles.user_info_contact}>
             <div className={styles.user_contact}>
               <Twitter fill={data?.twitter_username ? '#fff' : 'var(--transparentText)'} />
-              <p style={data?.twitter_username ? undefined : { color: 'var(--transparentText)' }}>
+              <p
+                style={
+                  data?.twitter_username ? { color: '#fff' } : { color: 'var(--transparentText)' }
+                }>
                 {data?.twitter_username || 'Not Available'}
               </p>
             </div>
@@ -97,7 +108,9 @@ const UserCard = ({ data }: Props) => {
               className={styles.user_contact}
               style={data?.company ? { color: '--transparentText' } : undefined}>
               <Company fill={data?.company ? '#fff' : 'var(--transparentText)'} />
-              <p>{data?.company || 'Not Available'}</p>
+              <p style={data?.company ? { color: '#fff' } : { color: 'var(--transparentText)' }}>
+                {data?.company || 'Not Available'}
+              </p>
             </div>
           </div>
         </div>
